@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(urlencoded({extended:true}));
 app.use(cookieParser());
 const corsOptions = {
-    origin:"originUrl",
+    origin:"https://mern-assistant.onrender.com",
     credentials:true
 }
 app.use(cors(corsOptions));

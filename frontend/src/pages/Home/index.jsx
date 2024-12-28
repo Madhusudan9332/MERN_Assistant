@@ -25,7 +25,7 @@ function Home() {
     const initializeBrowser = async () => {
       try {
         setLoading(true);
-        const res = await axios.get("http://baseurl/ai/init"); // Replace "http://baseurl" with your API base URL
+        const res = await axios.get("https://mern-assistant.onrender.com/ai/init"); // Replace "http://baseurl" with your API base URL
         console.log("Browser initialized:", res.data);
         setBrowserInitialized(true); // Set browser initialized state
       } catch (err) {
@@ -59,7 +59,7 @@ function Home() {
   const getAIResponse = async () => {
     try {
       setLoading(true);
-      const res = await axios.post("http://baseurl/ai/response", { prompt });
+      const res = await axios.post("https://mern-assistant.onrender.com/ai/response", { prompt });
       setResponse(res.data); // Set the response text
     } catch (err) {
       console.error("Error getting AI response:", err.message);
