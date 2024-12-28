@@ -1,5 +1,9 @@
 const puppeteer = require("puppeteer");
-const mode = process.env.NODE_ENV || 'development';
+const mode = process.env.NODE_ENV || "development";
+const executablePathIs =
+  mode == "development"
+    ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    : "/opt/render/.cache/puppeteer/chrome/linux-131.0.6778.204/chrome-linux64/chrome";
 
 let browser;
 let page;
@@ -34,7 +38,7 @@ const aiResponce = async (page) => {
 const initBrowser = async () => {
   if (!browser) {
     browser = await puppeteer.launch({
-      executablePath: 'C:\\Users\\hp\\.cache\\puppeteer\\chrome\\win64-131.0.6778.204\\chrome-win64\\chrome.exe', // Set the correct path
+      executablePath: executablePathIs, // Set the correct path
       headless: true,
       timeout: 120000,
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
