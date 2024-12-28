@@ -1,10 +1,10 @@
-import {
+const {
   initBrowser,
   closeBrowser,
   scrapData,
   initPage,
   closePage,
-} from "../operation/ai";
+} = require("../operation/ai");
 
 const init = async () => {
   try {

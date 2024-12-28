@@ -1,6 +1,8 @@
-import express from "express";
+const express = require("express");
 const router = express.Router();
-import { init, responce, newPage, close } from "../controller/ai";
+const { init, responce, newPage, close } = require("../controller/ai");
+
+
 
 router.get("/", async (req, res) => {
   res.json({
@@ -75,5 +77,5 @@ router.get("/close", async (req, res) => {
   }
 });
 
-export default router;
+module.exports = router;
 
