@@ -7,3 +7,4 @@ services:
       npm build
       npx puppeteer browsers install chrome
     startCommand: npm start
+    autoDeploy: true

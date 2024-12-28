@@ -1,4 +1,5 @@
 const puppeteer = require("puppeteer");
+const mode = process.env.NODE_ENV || 'development';
 
 let browser;
 let page;
