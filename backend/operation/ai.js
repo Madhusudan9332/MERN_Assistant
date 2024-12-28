@@ -33,6 +33,7 @@ const aiResponce = async (page) => {
 const initBrowser = async () => {
   if (!browser) {
     browser = await puppeteer.launch({
+      executablePath: 'C:\\Users\\hp\\.cache\\puppeteer\\chrome\\win64-131.0.6778.204\\chrome-win64\\chrome.exe', // Set the correct path
       headless: true,
       timeout: 120000,
       args: ["--no-sandbox", "--disable-setuid-sandbox"],

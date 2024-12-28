@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: my-app
+    env: node
+    buildCommand: |
+      mkdir -p /opt/render/.cache/puppeteer
+      npm build
+      npx puppeteer browsers install chrome
+    startCommand: npm start
