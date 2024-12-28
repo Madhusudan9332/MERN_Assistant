@@ -1,0 +1,363 @@
+
+/* Header container */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+}
+
+/* Left section (Speech Mode button) */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.speech-mode-btn {
+  background-color: #0066cc;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.speech-mode-btn:hover {
+  background-color: #005bb5;
+}
+
+/* Right section (Sign Up, Profile, and Menu) */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.signup-btn {
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  background-color: #4caf50;
+  border-radius: 5px;
+}
+
+.signup-btn:hover {
+  background-color: #45a049;
+}
+
+/* Profile button and dropdown menu */
+.profile-menu {
+  position: relative;
+}
+
+.profile-btn {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 8px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.profile-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background-color: #333;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  min-width: 160px;
+}
+
+.menu-dropdown .dropdown-item {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  font-size: 16px;
+}
+
+.menu-dropdown .dropdown-item:hover {
+  background-color: #555;
+}
+
+/* Show the dropdown when hovering over the profile button */
+.profile-menu:hover .menu-dropdown {
+  display: block;
+}
+.listening-mic {
+    position: fixed;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    text-align: center;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: translateX(-50%) scale(1);
+    }
+    50% {
+      transform: translateX(-50%) scale(1.1);
+    }
+    100% {
+      transform: translateX(-50%) scale(1);
+    }
+  }
+  
+  .mic-btn.recording {
+    color: red;
+    animation: pulse 1s infinite;
+  }
+  
+  .chat-box {
+    max-height: 400px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .user-input,
+  .bot-responce {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .user-input {
+    background-color: #0084ff;
+    color: white;
+    align-self: flex-end;
+    text-align: right;
+  }
+  
+  .bot-responce {
+    background-color: #e9e9e9;
+    color: #333;
+    align-self: flex-start;
+    text-align: left;
+  }
+  
+  .input-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color: #f3f3f3;
+    border-top: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .input-box .attachments {
+    color: #888;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  
+  .input-box .text-box {
+    flex: 1;
+    display: flex;
+  }
+  
+  .input-box input {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .input-box input:focus {
+    border-color: #0084ff;
+    box-shadow: 0 0 5px rgba(0, 132, 255, 0.5);
+  }
+  
+  .input-box .send-box {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .input-box .send-box button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .input-box .send-box button:hover {
+    color: #0084ff;
+  }
+  
+  .input-box .mic-btn {
+    color: #ff5e5e;
+  }
+  
+  .input-box .mic-btn.recording {
+    animation: pulse 1s infinite;
+  }
+  /* Fix the input box at the bottom */
+.input-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  background-color: #f3f3f3;
+  border-top: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.input-box .attachments {
+  color: #888;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.input-box .text-box {
+  flex: 1;
+  display: flex;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-box input:focus {
+  border-color: #0084ff;
+  box-shadow: 0 0 5px rgba(0, 132, 255, 0.5);
+}
+
+.input-box .send-box {
+  display: flex;
+  gap: 10px;
+}
+
+.input-box .send-box button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.input-box .send-box button:hover {
+  color: #0084ff;
+}
+
+.input-box .mic-btn {
+  color: #ff5e5e;
+}
+
+.input-box .mic-btn.recording {
+  animation: pulse 1s infinite;
+}
+
+/* Chat box should take all remaining space and be scrollable */
+.chat-box {
+  max-height: calc(100vh - 120px); /* Adjust height to leave space for the fixed input box */
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 60px; /* Space for input box */
+}
+
+.user-input,
+.bot-responce {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.user-input {
+  background-color: #0084ff;
+  color: white;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.bot-responce {
+  background-color: #e9e9e9;
+  color: #333;
+  align-self: flex-start;
+  text-align: left;
+}
+
+/* Listening Mic popup style */
+.listening-mic {
+  position: fixed;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  text-align: center;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.1);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
