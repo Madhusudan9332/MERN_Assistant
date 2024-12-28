@@ -2,10 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": { 
-    "dev": "nodemon backend/index.js",
-    "build":"npm install && npx puppeteer browsers install chrome && npm install --prefix frontend && npm run build --prefix frontend",
-    "start":"node backend/index.js"
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon backend/index.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "cross-env NODE_ENV=production node backend/index.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,7 @@
     "body-parser": "^1.20.3",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "path": "^0.12.7",

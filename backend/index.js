@@ -14,6 +14,8 @@ const bodyParser = require("body-parser");
 const { urlencoded } = require("body-parser");
 const path = require("path");
 
+const mode = process.env.NODE_ENV || 'development';
+
 const aiRoute = require("./route/ai");
 
 dotenv.config();
@@ -28,7 +30,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(urlencoded({ extended: true }));
 app.use(cookieParser());
 const corsOptions = {
-  origin: "https://mern-assistant.onrender.com",
+  origin: mode== "development" ? `http://localhost:${PORT}` : "https://mern-assistant.onrender.com",
   credentials: true,
 };
 app.use(cors(corsOptions));

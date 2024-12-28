@@ -7,7 +7,7 @@ const { init, responce, newPage, close } = require("../controller/ai");
 router.get("/", async (req, res) => {
   res.json({
     status: "success",
-    domains: ["/init", "/responce", "/newPage", "/close"],
+    domains: ["/ai/init", "/ai/responce", "/ai/newPage", "/ai/close"],
   });
 });
 router.get("/init", async (req, res) => {
