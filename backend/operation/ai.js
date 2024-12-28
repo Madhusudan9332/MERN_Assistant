@@ -3,7 +3,7 @@ const mode = process.env.NODE_ENV || "development";
 const executablePathIs =
   mode == "development"
     ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
-    : "/opt/render/.cache/puppeteer/chrome/linux-131.0.6778.204/chrome-linux64/chrome";
+    : "/opt/render/.cache/puppeteer/chrome/linux-131.0.6778.204/chrome-linux64/chrome.exe";
 
 let browser;
 let page;
